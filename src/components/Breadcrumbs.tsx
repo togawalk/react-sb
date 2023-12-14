@@ -1,42 +1,52 @@
-import { Children } from "react";
+import { Children, ReactNode } from "react";
+import { FiChevronRight } from "react-icons/fi";
+import { cn } from "../lib/utils";
 
 interface BreadcrumbsProps {
-  children?: React.ReactNode;
+  children?: ReactNode[];
+  separator?: ReactNode;
+  classes?: {
+    separator?: string;
+    ol?: string;
+  }
 }
 
-export const Breadcrumbs = ({ children }: BreadcrumbsProps) => {
+interface BreadcrumbsSeparatorProps {
+  separator?: ReactNode;
+  className?: string;
+}
+
+export const Breadcrumbs = ({ children, separator, classes }: BreadcrumbsProps) => {
+  const allItems = Children.toArray(children);
   return (
-    <ol className="flex items-center whitespace-nowrap" aria-label="Breadcrumb">
-      {Children.map(children, (child) => (
-        <li className="inline-flex items-center">
-          <a
-            className="flex items-center text-sm text-muted-foreground hover:text-accent-foreground"
-            href="#"
-          >
-            {child}
-          </a>
-          <svg
-            className="flex-shrink-0 mx-2 overflow-visible h-4 w-4 text-gray-400 dark:text-neutral-600 dark:text-neutral-600"
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="m9 18 6-6-6-6" />
-          </svg>
-        </li>
-      ))}
-      <li
-        className="inline-flex items-center text-sm font-semibold text-gray-800 truncate dark:text-gray-200"
-        aria-current="page"
-      >
-        Application
-      </li>
+    <ol
+      className={cn("flex items-center whitespace-nowrap font-semibold", classes?.ol)}
+      aria-label="Breadcrumb"
+    >
+      {insertSeparators(allItems, separator, classes?.separator)}
     </ol>
   );
 };
+
+const BreadcrumbsSeparator = ({ separator, className }: BreadcrumbsSeparatorProps) => {
+  return (
+    <div className={cn("mx-2 text-muted-foreground", className)}>
+      {separator ? separator : <FiChevronRight />}
+    </div>
+  );
+};
+
+function insertSeparators(items: ReactNode[], separator: any, className?: string) {
+  return items.reduce((acc: ReactNode[], current: ReactNode, index: number) => {
+    if (index < items.length - 1) {
+      acc = acc.concat(
+        current,
+        <BreadcrumbsSeparator separator={separator} key={index} className={className}/>
+      );
+    } else {
+      acc.push(current);
+    }
+
+    return acc;
+  }, []);
+}
