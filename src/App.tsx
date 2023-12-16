@@ -1,5 +1,6 @@
+import { Badge } from "./components/Badge";
 import { Breadcrumbs } from "./components/Breadcrumbs";
-import { Component } from "./components/Component";
+import { Button } from "./components/Button";
 import { Header } from "./components/Header";
 
 function App() {
@@ -7,10 +8,8 @@ function App() {
     <>
       <Header />
       <main className="flex items-start flex-1 gap-4 px-8 py-3">
-        <Component>
-          <Breadcrumbs separator={"/"} classes={{
-            "ol": "px-8",
-            "separator": "mx-3"
+          <Breadcrumbs classes={{
+            "ol": "px-8 py-4 bg-card rounded-md",
           }}>
 
             <li className="inline-flex items-center">
@@ -36,33 +35,14 @@ function App() {
               Application
             </li>
           </Breadcrumbs>
-        </Component>
-        <Component>
-          <Breadcrumbs>
-            <li className="inline-flex items-center">
-              <a
-                className="flex items-center text-sm text-muted-foreground hover:text-accent-foreground focus:outline-none focus:text-accent-foreground"
-                href="#"
-              >
-                Home
-              </a>
-            </li>
-            <li className="inline-flex items-center">
-              <a
-                className="flex items-center text-sm text-muted-foreground hover:text-accent-foreground focus:outline-none focus:text-accent-foreground"
-                href="#"
-              >
-                App Center
-              </a>
-            </li>
-            <li
-              className="inline-flex items-center text-sm font-semibold text-primary truncate"
-              aria-current="page"
-            >
-              Application
-            </li>
-          </Breadcrumbs>
-        </Component>
+        <Badge>Badge</Badge>
+        <Badge variant="destructive">Badge</Badge>
+        <Button>Button</Button>
+        <Button variant="destructive">Destructive button</Button>
+        <Button variant="outline">Outline button</Button>
+        <Button variant="secondary">Secondary button</Button>
+        <Button variant="ghost">Ghost button</Button>
+        <Button variant="link">Link button</Button>
       </main>
     </>
   );
