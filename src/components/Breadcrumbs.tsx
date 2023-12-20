@@ -36,7 +36,7 @@ const BreadcrumbsSeparator = ({ separator, className }: BreadcrumbsSeparatorProp
   );
 };
 
-function insertSeparators(items: ReactNode[], separator: any, className?: string) {
+function insertSeparators(items: ReactNode[], separator: ReactNode, className?: string) {
   return items.reduce((acc: ReactNode[], current: ReactNode, index: number) => {
     if (index < items.length - 1) {
       acc = acc.concat(
