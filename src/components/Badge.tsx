@@ -7,26 +7,24 @@ const badgeVariants = cva("inline-flex items-center rounded-md px-3 py-1 text-sm
       default: "bg-card text-primary ring-border",
       destructive: "bg-destructive/20 text-red-300 ring-destructive/50",
     },
-    color: {
-      default: "",
-    },
   },
   defaultVariants: {
     variant: "default",
-    color: "default",
   },
 });
 
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+  VariantProps<typeof badgeVariants> { }
 
 const Badge = ({
   className,
   variant,
-  color,
   ...props
-}) => {
+}: BadgeProps) => {
   return (
     <div
-      className={cn(badgeVariants({ variant, color, className }))}
+      className={cn(badgeVariants({ variant, className }))}
       {...props}
     />
   );

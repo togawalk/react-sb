@@ -35,14 +35,18 @@ function App() {
               Application
             </li>
           </Breadcrumbs>
-        <Badge>Badge</Badge>
-        <Badge variant="destructive">Badge</Badge>
-        <Button>Button</Button>
-        <Button variant="destructive">Destructive button</Button>
-        <Button variant="outline">Outline button</Button>
-        <Button variant="secondary">Secondary button</Button>
-        <Button variant="ghost">Ghost button</Button>
-        <Button variant="link">Link button</Button>
+        <div className="bg-card rounded-md p-4 flex gap-3">
+          <Badge>Badge</Badge>
+          <Badge variant="destructive">Badge</Badge>
+        </div>
+        <div className="bg-card rounded-md p-4 flex gap-3 flex-col items-start">
+          <Button>Button</Button>
+          <Button variant="destructive">Destructive button</Button>
+          <Button variant="outline">Outline button</Button>
+          <Button variant="secondary">Secondary button</Button>
+          <Button variant="ghost">Ghost button</Button>
+          <Button variant="link">Link button</Button>
+        </div>
       </main>
     </>
   );
