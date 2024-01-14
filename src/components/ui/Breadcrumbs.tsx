@@ -1,6 +1,6 @@
 import { Children, ReactNode } from 'react'
 import { FiChevronRight } from 'react-icons/fi'
-import { cn } from '../lib/utils'
+import { cn } from '../../lib/utils'
 
 interface BreadcrumbsProps {
   children?: ReactNode[]
