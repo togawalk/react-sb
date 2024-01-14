@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #root, .app {
+html,
+body,
+#root,
+.app {
   height: 100%;
   width: 100%;
   @apply bg-background flex-col;
@@ -31,7 +34,7 @@ html, body, #root, .app {
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 221, 16.3%, 19.2%;
     --foreground: 210 40% 98%;
