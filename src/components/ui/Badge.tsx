@@ -8,6 +8,7 @@ const badgeVariants = cva(
       variant: {
         default: 'bg-card text-primary ring-border',
         destructive: 'bg-destructive/20 text-red-300 ring-destructive/50',
+        warning: 'bg-warning/20 text-yellow-300 ring-warning/50',
       },
     },
     defaultVariants: {

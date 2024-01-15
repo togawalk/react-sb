@@ -39,6 +39,7 @@ function App() {
         <div className='bg-card rounded-md p-4 flex gap-3'>
           <Badge>Badge</Badge>
           <Badge variant='destructive'>Badge</Badge>
+          <Badge variant='warning'>Badge</Badge>
         </div>
         <div className='bg-card rounded-md p-4 flex gap-3 flex-col items-start'>
           <Button>Button</Button>
