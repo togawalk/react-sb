@@ -1,7 +1,7 @@
-import { Badge } from './components/ui/Badge'
-import { Breadcrumbs } from './components/ui/Breadcrumbs'
-import { Button } from '@/components/ui/Button'
-import { Header } from './components/Header'
+import { Badge } from '@components/ui/Badge'
+import { Breadcrumbs } from '@components/ui/Breadcrumbs'
+import { Button } from '@components/ui/Button'
+import { Header } from '@components/Header'
 
 function App() {
   return (
