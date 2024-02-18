@@ -8,10 +8,10 @@ function App() {
   return (
     <>
       <Header />
-      <main className='flex items-start flex-1 gap-4 px-8 py-3'>
+      <main className='grid grid-cols-11 items-start flex-1 gap-4 px-8 py-3'>
         <Breadcrumbs
           classes={{
-            ol: 'px-8 py-4 bg-card rounded-md',
+            ol: 'px-8 py-4 bg-card rounded-md col-span-2 justify-center',
           }}
         >
           <li className='inline-flex items-center'>
@@ -37,12 +37,12 @@ function App() {
             Application
           </li>
         </Breadcrumbs>
-        <div className='bg-card rounded-md p-4 flex gap-3'>
+        <div className='bg-card rounded-md p-4 flex gap-3 col-span-2 justify-center'>
           <Badge>Badge</Badge>
           <Badge variant='destructive'>Badge</Badge>
           <Badge variant='warning'>Badge</Badge>
         </div>
-        <div className='bg-card rounded-md p-4 flex gap-3 flex-col items-start'>
+        <div className='bg-card rounded-md p-4 flex gap-3 flex-col items-start col-span-2'>
           <Button>Button</Button>
           <Button variant='destructive'>Destructive button</Button>
           <Button variant='outline'>Outline button</Button>
@@ -51,7 +51,7 @@ function App() {
           <Button variant='link'>Link button</Button>
         </div>
 
-        <div className="bg-card rounded-md p-4 flex gap-3 flex-col items-start">
+        <div className="bg-card rounded-md p-4 flex gap-3 flex-col items-start col-span-5">
           <Timeline>
             <Timeline.Time>18 feb, 2024</Timeline.Time>
             <Timeline.Item>
