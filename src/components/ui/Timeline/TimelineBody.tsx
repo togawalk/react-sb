@@ -6,7 +6,7 @@ interface TimelineBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export const TimelineBody: FC<TimelineBodyProps> = ({ children }) => {
   return (
-    <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+    <div className="mt-1 text-sm text-secondary-foreground">
       {children}
     </div>
   )
